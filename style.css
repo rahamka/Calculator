@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: rgb(48, 46, 46);
+  display: flex;
+  justify-content: center;
+}
+
+#main-div {
+  height: 420px;
+  width: 500px;
+  margin-top: 20vh;
+  border-radius: 15px;
+  background-color: black;
+}
+
+#display-div {
+  height: 80px;
+  border-bottom: 2px solid #fff;
+  display: flex;
+  justify-content: right;
+  padding: 30px;
+  font-size: 25px;
+}
+
+#main-homebar-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#whole-digits-div {
+  width: 320px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+#whole-digits-div .digits-div {
+  height: 60px;
+  width: 80px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(70, 70, 70);
+  cursor: pointer;
+  border-radius: 15px;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+#whole-digits-div .digits-div:hover {
+  background-color: rgb(226, 126, 43);
+}
+
+#operator-div {
+  width: 200px;
+}
+
+#whole-operators-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 10px;
+}
+#whole-operators-div button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 126, 5);
+  height: 60px;
+  width: 80px;
+  display: flex;
+  border-radius: 20px;
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.5;
+}
+
+#name_div {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  text-decoration: underline;
+}
+
+#calc_name_para:hover {
+  color: yellow;
+  display: flex;
+  flex-shrink: 1.4;
+}
+
+#name_div:hover {
+  color: yellow;
+}
+
+#calc_name_para {
+  font-family: cursive;
+}
+
+button {
+  border: none;
+}
