@@ -13,40 +13,43 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-}
-
-#main-div {
-  width: 90vw; /* Use viewport width for flexibility */
-  max-width: 500px;
-  height: auto; /* Allow height to adjust based on content */
-  margin: 5vh auto;
-  border-radius: 15px;
-  background-color: black;
   padding: 1rem;
 }
 
+#main-div {
+  width: 90vw;
+  max-width: 600px; /* Increased for larger screens */
+  min-width: 300px; /* Minimum for very small screens */
+  height: auto;
+  margin: 2vh auto;
+  border-radius: 1rem;
+  background-color: black;
+  padding: 1.5rem;
+}
+
 #display-div {
-  height: 80px;
+  height: 4.5rem; /* Relative height */
   border-bottom: 2px solid #fff;
   display: flex;
   justify-content: right;
   align-items: center;
-  padding: 1.5rem;
-  font-size: 1.8rem; /* Slightly smaller for mobile */
-  overflow-x: auto; /* Handle overflow on small screens */
+  padding: 1rem 1.5rem;
+  font-size: 1.8rem;
+  overflow-x: auto;
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 #main-homebar-div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
 #whole-digits-div {
-  width: 100%; /* Full width for flexibility */
-  max-width: 320px;
+  width: 100%;
+  max-width: 400px; /* Adjusted for larger screens */
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -57,15 +60,15 @@ body {
 
 #whole-digits-div .digits-div {
   height: 3.5rem;
-  width: 22%; /* Relative width for buttons */
-  min-width: 60px; /* Minimum size for touch */
+  width: 23%; /* Scales with container */
+  min-width: 44px; /* Accessibility minimum for touch */
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgb(70, 70, 70);
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 0.8rem;
   font-weight: 500;
   font-size: 1.4rem;
 }
@@ -75,7 +78,7 @@ body {
 }
 
 #operator-div {
-  width: 100%; /* Full width for flexibility */
+  width: 100%;
   max-width: 200px;
 }
 
@@ -95,9 +98,9 @@ body {
   align-items: center;
   background-color: rgb(255, 126, 5);
   height: 3.5rem;
-  width: 22%; /* Relative width for buttons */
-  min-width: 60px; /* Minimum size for touch */
-  border-radius: 15px;
+  width: 23%;
+  min-width: 44px; /* Accessibility minimum for touch */
+  border-radius: 1rem;
   font-size: 1.3rem;
   font-weight: 500;
   cursor: pointer;
@@ -112,7 +115,7 @@ button:hover {
   display: flex;
   justify-content: center;
   font-size: 1.2rem;
-  margin: 1rem;
+  margin: 1rem auto;
   text-decoration: underline;
 }
 
@@ -128,47 +131,99 @@ button:hover {
   font-family: cursive;
 }
 
-/* Tablet and mobile view (below 768px) */
-@media (max-width: 768px) {
+/* Extra small screens (below 360px) */
+@media (max-width: 360px) {
+  #main-div {
+    width: 98vw;
+    padding: 0.5rem;
+  }
+
+  #display-div {
+    height: 3rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  #whole-digits-div .digits-div {
+    height: 2.5rem;
+    width: 22%;
+    font-size: 0.9rem;
+  }
+
+  #whole-operators-div button {
+    height: 2.5rem;
+    width: 22%;
+    font-size: 0.9rem;
+  }
+
+  #name_div {
+    font-size: 0.8rem;
+    margin: 0.5rem;
+  }
+}
+
+/* Small screens (360px to 480px) */
+@media (min-width: 361px) and (max-width: 480px) {
   #main-div {
     width: 95vw;
     padding: 0.8rem;
   }
 
   #display-div {
-    height: 60px;
-    font-size: 1.5rem;
+    height: 3.5rem;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+
+  #whole-digits-div .digits-div {
+    height: 3rem;
+    width: 22%;
+    font-size: 1.1rem;
+  }
+
+  #whole-operators-div button {
+    height: 3rem;
+    width: 22%;
+    font-size: 1.1rem;
+  }
+
+  #name_div {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet screens (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  #main-div {
+    width: 90vw;
     padding: 1rem;
   }
 
+  #display-div {
+    height: 4rem;
+    font-size: 1.5rem;
+  }
+
   #main-homebar-div {
-    flex-direction: column; /* Stack vertically */
-    align-items: center;
+    flex-direction: row; /* Keep row layout for tablets */
+    gap: 0.8rem;
   }
 
   #whole-digits-div {
-    max-width: 100%;
+    max-width: 350px;
     gap: 0.8rem;
   }
 
   #whole-digits-div .digits-div {
+    height: 3.2rem;
     width: 23%;
-    height: 3rem;
     font-size: 1.2rem;
   }
 
-  #operator-div {
-    max-width: 100%;
-  }
-
-  #whole-operators-div {
-    gap: 0.8rem;
-  }
-
   #whole-operators-div button {
+    height: 3.2rem;
     width: 23%;
-    height: 3rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   #name_div {
@@ -176,33 +231,59 @@ button:hover {
   }
 }
 
-/* Small mobile view (below 480px) */
-@media (max-width: 480px) {
+/* Desktop screens (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
   #main-div {
-    width: 98vw;
-    padding: 0.5rem;
+    width: 80vw;
+    max-width: 500px;
   }
 
   #display-div {
-    height: 50px;
-    font-size: 1.2rem;
-    padding: 0.8rem;
+    font-size: 1.7rem;
+  }
+
+  #whole-digits-div {
+    max-width: 360px;
   }
 
   #whole-digits-div .digits-div {
-    width: 22%;
-    height: 2.5rem;
-    font-size: 1rem;
+    height: 3.5rem;
+    font-size: 1.4rem;
   }
 
   #whole-operators-div button {
-    width: 22%;
-    height: 2.5rem;
-    font-size: 1rem;
+    height: 3.5rem;
+    font-size: 1.3rem;
+  }
+}
+
+/* Large screens (above 1024px) */
+@media (min-width: 1025px) {
+  #main-div {
+    width: 70vw;
+    max-width: 600px;
+  }
+
+  #display-div {
+    font-size: 2rem;
+    height: 5rem;
+  }
+
+  #whole-digits-div {
+    max-width: 400px;
+  }
+
+  #whole-digits-div .digits-div {
+    height: 4rem;
+    font-size: 1.6rem;
+  }
+
+  #whole-operators-div button {
+    height: 4rem;
+    font-size: 1.5rem;
   }
 
   #name_div {
-    font-size: 0.9rem;
-    margin: 0.5rem;
+    font-size: 1.4rem;
   }
 }
