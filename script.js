@@ -31,7 +31,6 @@ function appendDigit(digit) {
   } else {
     num2 += digit;
     displayDiv.innerText = num1 + " " + operator + " " + num2;
-    // didn't understand this line of code?
   }
 }
 
@@ -111,7 +110,7 @@ function setOperator(op) {
   resultDisplayed = false;
 }
 
-document.querySelector(".operator1").addEventListener("click", () => {
+document.querySelector("#operator1").addEventListener("click", () => {
   num1 = "";
   num2 = "";
   operator = "";
@@ -120,28 +119,21 @@ document.querySelector(".operator1").addEventListener("click", () => {
 });
 
 document
-  .querySelector(".operator2")
+  .querySelector("#operator2")
   .addEventListener("click", () => setOperator("+"));
 document
-  .querySelector(".operator4")
+  .querySelector("#operator3")
   .addEventListener("click", () => setOperator("-"));
 document
-  .querySelector(".operator6")
-  .addEventListener("click", () => setOperator("*"));
+  .querySelector("#operator4")
+  .addEventListener("click", () => setOperator("%"));
 document
-  .querySelector(".operator7")
+  .querySelector("#operator5")
   .addEventListener("click", () => setOperator("/"));
 document
-  .querySelector(".operator5")
-  .addEventListener("click", () => setOperator("%"));
-
-document.querySelector(".operator3").addEventListener("click", () => {
-  if (operator !== "" && num2 !== "") {
-    calculate();
-  }
-});
-
-document.querySelector(".operator8").addEventListener("click", () => {
+  .querySelector("#operator6")
+  .addEventListener("click", () => setOperator("*"));
+document.querySelector("#operator7").addEventListener("click", () => {
   if (operator === "") {
     if (num1 !== "") {
       num1 = (-parseFloat(num1)).toString();
@@ -153,4 +145,4 @@ document.querySelector(".operator8").addEventListener("click", () => {
   }
 });
 
-// note: create your own calculater and then you can show to other that i've done ___ ?
+document.querySelector("#operator8").addEventListener("click", calculate);
