@@ -11,14 +11,18 @@ body {
   background-color: rgb(48, 46, 46);
   display: flex;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 #main-div {
-  height: 420px;
-  width: 500px;
-  margin-top: 20vh;
+  width: 90vw; /* Use viewport width for flexibility */
+  max-width: 500px;
+  height: auto; /* Allow height to adjust based on content */
+  margin: 5vh auto;
   border-radius: 15px;
   background-color: black;
+  padding: 1rem;
 }
 
 #display-div {
@@ -26,38 +30,44 @@ body {
   border-bottom: 2px solid #fff;
   display: flex;
   justify-content: right;
-  padding: 30px;
-  font-size: 25px;
+  align-items: center;
+  padding: 1.5rem;
+  font-size: 1.8rem; /* Slightly smaller for mobile */
+  overflow-x: auto; /* Handle overflow on small screens */
 }
 
 #main-homebar-div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 1rem;
 }
 
 #whole-digits-div {
-  width: 320px;
+  width: 100%; /* Full width for flexibility */
+  max-width: 320px;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 10px;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 #whole-digits-div .digits-div {
-  height: 60px;
-  width: 80px;
+  height: 3.5rem;
+  width: 22%; /* Relative width for buttons */
+  min-width: 60px; /* Minimum size for touch */
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgb(70, 70, 70);
   cursor: pointer;
-  border-radius: 15px;
+  border-radius: 10px;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 1.4rem;
 }
 
 #whole-digits-div .digits-div:hover {
@@ -65,7 +75,8 @@ body {
 }
 
 #operator-div {
-  width: 200px;
+  width: 100%; /* Full width for flexibility */
+  max-width: 200px;
 }
 
 #whole-operators-div {
@@ -74,21 +85,23 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 18px;
-  margin-top: 10px;
+  gap: 1rem;
+  margin-top: 1rem;
 }
+
 #whole-operators-div button {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgb(255, 126, 5);
-  height: 60px;
-  width: 80px;
-  display: flex;
-  border-radius: 20px;
-  font-size: 22px;
+  height: 3.5rem;
+  width: 22%; /* Relative width for buttons */
+  min-width: 60px; /* Minimum size for touch */
+  border-radius: 15px;
+  font-size: 1.3rem;
   font-weight: 500;
   cursor: pointer;
+  border: none;
 }
 
 button:hover {
@@ -98,15 +111,13 @@ button:hover {
 #name_div {
   display: flex;
   justify-content: center;
-  font-size: 1.5rem;
-  margin-left: 1rem;
+  font-size: 1.2rem;
+  margin: 1rem;
   text-decoration: underline;
 }
 
 #calc_name_para:hover {
   color: yellow;
-  display: flex;
-  flex-shrink: 1.4;
 }
 
 #name_div:hover {
@@ -117,6 +128,81 @@ button:hover {
   font-family: cursive;
 }
 
-button {
-  border: none;
+/* Tablet and mobile view (below 768px) */
+@media (max-width: 768px) {
+  #main-div {
+    width: 95vw;
+    padding: 0.8rem;
+  }
+
+  #display-div {
+    height: 60px;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+
+  #main-homebar-div {
+    flex-direction: column; /* Stack vertically */
+    align-items: center;
+  }
+
+  #whole-digits-div {
+    max-width: 100%;
+    gap: 0.8rem;
+  }
+
+  #whole-digits-div .digits-div {
+    width: 23%;
+    height: 3rem;
+    font-size: 1.2rem;
+  }
+
+  #operator-div {
+    max-width: 100%;
+  }
+
+  #whole-operators-div {
+    gap: 0.8rem;
+  }
+
+  #whole-operators-div button {
+    width: 23%;
+    height: 3rem;
+    font-size: 1.1rem;
+  }
+
+  #name_div {
+    font-size: 1rem;
+  }
+}
+
+/* Small mobile view (below 480px) */
+@media (max-width: 480px) {
+  #main-div {
+    width: 98vw;
+    padding: 0.5rem;
+  }
+
+  #display-div {
+    height: 50px;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+
+  #whole-digits-div .digits-div {
+    width: 22%;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+
+  #whole-operators-div button {
+    width: 22%;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+
+  #name_div {
+    font-size: 0.9rem;
+    margin: 0.5rem;
+  }
 }
