@@ -139,7 +139,10 @@ body {
     width: 90vw;
     padding: 0.4rem;
   }
-
+#calc_name_para{
+  font-size: 2rem;
+}
+  
   #display-div {
     height: 2.2rem;
     font-size: 0.8rem;
@@ -197,6 +200,9 @@ body {
   #operator-div {
     width: 35%;
   }
+  #calc_name_para{
+  font-size: 2rem;
+}
 
   #whole-operators-div button {
     height: 2.5rem;
@@ -215,6 +221,9 @@ body {
     max-width: 320px;
     padding: 0.6rem;
   }
+  #calc_name_para{
+  font-size: 2rem;
+}
 
   #display-div {
     height: 2.8rem;
@@ -246,7 +255,10 @@ body {
     width: 75vw;
     max-width: 350px;
   }
-
+  
+#calc_name_para{
+  font-size: 2rem;
+}
   #display-div {
     font-size: 1.1rem;
   }
